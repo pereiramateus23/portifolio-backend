@@ -6,7 +6,7 @@ const contatoRoutes = require("./backend/routes/contato");
 
 // Inicializa o app Express
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // Configura MongoDB
 mongoose.connect("mongodb://127.0.0.1:27017/portfolioDB") 
@@ -24,3 +24,4 @@ app.use("/api/contato", contatoRoutes);
 app.listen(PORT, () => {
   console.log(`Servidor rodando em http://localhost:${PORT}`);
 });
+

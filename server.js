@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const bodyParser = require("body-parser");
-const contatoRoutes = require("./backend/routes/contato");
+const contatoRoutes = require("./routes/contato");
 
 // Inicializa o app Express
 const app = express();
@@ -24,4 +24,5 @@ app.use("/api/contato", contatoRoutes);
 app.listen(PORT, () => {
   console.log(`Servidor rodando em http://localhost:${PORT}`);
 });
+
 

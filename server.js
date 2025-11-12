@@ -9,7 +9,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Configura MongoDB
-mongoose.connect("mongodb://127.0.0.1:27017/portfolioDB") 
+mongoose.connect("mongodb+srv://mtspereira23_db_user:p6Bx7C3JArE6pqQY@cluster0.r9pyrdx.mongodb.net/portfolioDB") 
   .then(() => console.log("✅ Conectado ao MongoDB")) 
   .catch((err) => console.error("❌ Erro ao conectar ao MongoDB:", err));
 
@@ -24,5 +24,6 @@ app.use("/api/contato", contatoRoutes);
 app.listen(PORT, () => {
   console.log(`Servidor rodando em http://localhost:${PORT}`);
 });
+
 
 

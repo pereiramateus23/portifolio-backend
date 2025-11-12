@@ -7,6 +7,9 @@ const contatoRoutes = require("./routes/contato");
 // Inicializa o app Express
 const app = express();
 const PORT = process.env.PORT || 3000;
+app.use(cors());  // Habilita CORS para todas as rotas
+app.use(bodyParser.json()); // Parse application/json
+
 
 // Configura MongoDB
 mongoose.connect("mongodb+srv://mtspereira23_db_user:p6Bx7C3JArE6pqQY@cluster0.r9pyrdx.mongodb.net/portfolioDB") 
@@ -24,6 +27,7 @@ app.use("/api/contato", contatoRoutes);
 app.listen(PORT, () => {
   console.log(`Servidor rodando em http://localhost:${PORT}`);
 });
+
 
 
 
